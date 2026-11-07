@@ -1,0 +1,25 @@
+Puente para la Autonomía Financiera — versión 4 revisada
+
+Contenido:
+- index.html: aplicación web.
+- manifest.json e icon.svg: metadatos e icono de instalación.
+- sw.js: archivo reservado; la aplicación requiere internet para consultar recursos y tipo de cambio. No ofrece funcionamiento sin conexión.
+
+Cambios conservados de la versión 4:
+- Al cambiar de periodo, la fecha del movimiento se ajusta al primer día del mes seleccionado.
+- Se valida que la fecha de cada movimiento corresponda al mes consultado.
+- El resumen distingue el resultado del periodo (ingresos menos gastos) del saldo disponible al cierre.
+- Se conserva la opción de trasladar el saldo disponible del mes anterior.
+- Se conservan los módulos de créditos, recursos y oportunidades, selector de moneda y consulta de tipo de cambio.
+
+Protección de respaldos:
+- Antes de importar, se valida la estructura y el contenido de los registros, escenarios, moneda, sueldo y saldos trasladados.
+- Un archivo inválido se rechaza sin modificar los datos actuales.
+- La aplicación pide confirmación antes de reemplazar los datos actuales con un respaldo válido.
+- Los respaldos se descargan en formato JSON desde el botón “Respaldar datos”.
+
+Privacidad:
+- La información se guarda únicamente en el navegador y dispositivo de cada persona mediante almacenamiento local.
+- No se envía a una cuenta, servidor ni almacenamiento en la nube.
+- Para cambiar de dispositivo o prevenir pérdidas, descarga y conserva un respaldo.
+- La consulta del tipo de cambio requiere internet y muestra una referencia de mercado; no es el FIX de Banxico.
